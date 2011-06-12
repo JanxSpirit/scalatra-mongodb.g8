@@ -1,6 +1,6 @@
 # Scalatra MongoDB project
 
-[g8](http://github.com/n8han/giter8) template to get a Scalatra web service up and running quickly with MongoDB support using Casbah. The template generates a file that uses SBT 0.10.x
+[g8](http://github.com/n8han/giter8) template to get a Scalatra web service up and running quickly with MongoDB support using Casbah. The template generates a project that uses SBT 0.10.x. The project will not build under 0.7.x versions of SBT.
 
 ## Usage
 
@@ -15,11 +15,12 @@ In a shell, run the following:
     sbt
     > jetty-run
     
-You should be able to browse to a [test resource](http://localhost:8080)
+You should be able to browse to a [test resource](http://localhost:8080/test)
 
 ## What's inside
 
 The servlet provides two resources:
+
 1. 'test' - a 'Hello World' type resource just to make sure everything is working.
 2. 'msgs' - GET msgs to see all records currently in the database and a form to add another record - the form issues a POST to the same resource to add records
 
@@ -29,4 +30,4 @@ The template allows you to configure where your MongoDB server is running, the n
 
 ## Thanks
 
-Thanks to [Nathan Hamblen](https://github.com/n8han) for [giter8](https://github.com/n8han/giter8), [Brendan McAdams](https://github.com/bwmcadams) for the [Casbah](https://github.com/mongodb/casbah) MongoDB Driver and [Ross Baker](https://github.com/rossabaker) for [Scalatra[(https://github.com/scalatra/scalatra).
+Thanks to [Nathan Hamblen](https://github.com/n8han) for [giter8](https://github.com/n8han/giter8), [Brendan McAdams](https://github.com/bwmcadams) for the [Casbah](https://github.com/mongodb/casbah) MongoDB Driver and [Ross Baker](https://github.com/rossabaker) for [Scalatra](https://github.com/scalatra/scalatra).
