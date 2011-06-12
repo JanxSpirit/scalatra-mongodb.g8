@@ -13,6 +13,7 @@ In a shell, run the following:
     g8 JanxSpirit/scalatra-mongodb
     cd <name-of-app>
     sbt
+    > update
     > jetty-run
     
 You should be able to browse to a [test resource](http://localhost:8080/test)
