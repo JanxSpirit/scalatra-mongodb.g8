@@ -4,7 +4,7 @@ import com.mongodb.casbah.Imports._
 class $servlet_name$ extends ScalatraServlet {
 
   //setup Casbah connection
-  val mongo = MongoConnection($mongodb_host$,$mongodb_port$)($mongodb_db$)($mongodb_collection$)
+  val mongo = MongoConnection("$mongodb_host$",$mongodb_port$)("$mongodb_db$")("$mongodb_collection$")
 
   get("/test") {
     <h1>Test resource</h1>
