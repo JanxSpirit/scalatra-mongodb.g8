@@ -37,4 +37,4 @@ At the SBT prompt you can run 'assembly' to generate an executable jar in the /t
 ## Thanks
 
 Thanks to [Nathan Hamblen](https://github.com/n8han) for [giter8](https://github.com/n8han/giter8), [Brendan McAdams](https://github.com/bwmcadams) for the [Casbah](https://github.com/mongodb/casbah) MongoDB Driver, [Ross Baker](https://github.com/rossabaker) for [Scalatra](https://github.com/scalatra/scalatra)
-and Coda Hale and Eugene Yokota for the [SBT Assembly Plugin](https://github.com/eed3si9n/sbt-assembly).
+and [Coda Hale](https://github.com/codahale) and [Eugene Yokota](https://github.com/eed3si9n) for the [SBT Assembly Plugin](https://github.com/eed3si9n/sbt-assembly).
