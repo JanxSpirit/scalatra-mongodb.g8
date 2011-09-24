@@ -4,13 +4,18 @@ version := "$version$"
 
 scalaVersion := "$scala_version$"
 
-seq(WebPlugin.webSettings :_*)
+mainClass := Some("JettyLauncher")
+
+seq(webSettings :_*)
+
+seq(assemblySettings: _*)
 
 libraryDependencies ++= Seq(
-  "com.mongodb.casbah" %% "casbah" % "2.1.5.0",
-  "org.scalatra" %% "scalatra" % "2.0.0-SNAPSHOT",
-  "org.scalatra" %% "scalatra-specs" % "2.0.0-SNAPSHOT" % "test",
-  "org.mortbay.jetty" % "jetty" % "6.1.22" % "jetty",
+  "com.mongodb.casbah" % "casbah_2.8.1" % "2.1.5.0",
+  "org.scalatra" %% "scalatra" % "2.0.0",
+  "org.scalatra" %% "scalatra-specs" % "2.0.0" % "test",
+  "org.mortbay.jetty" % "jetty" % "6.1.22" % "provided, jetty",
+  "org.mortbay.jetty" % "jetty-servlet-tester" % "6.1.22" % "provided-> default",
   "javax.servlet" % "servlet-api" % "2.5" % "provided->default"
 )
 

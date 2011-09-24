@@ -29,6 +29,12 @@ The project includes a few basic tests to get you started. Run 'sbt test' to see
 
 The template allows you to configure where your MongoDB server is running, the name of your servlet and other parameters.
 
+## Executable Jar
+
+At the SBT prompt you can run 'assembly' to generate an executable jar in the /target directory, It bundles Jetty and Scala and takes an optional argument for port (default is 8080).
+> java -jar /target/myproject-assembly.jar
+
 ## Thanks
 
-Thanks to [Nathan Hamblen](https://github.com/n8han) for [giter8](https://github.com/n8han/giter8), [Brendan McAdams](https://github.com/bwmcadams) for the [Casbah](https://github.com/mongodb/casbah) MongoDB Driver and [Ross Baker](https://github.com/rossabaker) for [Scalatra](https://github.com/scalatra/scalatra).
+Thanks to [Nathan Hamblen](https://github.com/n8han) for [giter8](https://github.com/n8han/giter8), [Brendan McAdams](https://github.com/bwmcadams) for the [Casbah](https://github.com/mongodb/casbah) MongoDB Driver, [Ross Baker](https://github.com/rossabaker) for [Scalatra](https://github.com/scalatra/scalatra)
+and Coda Hale and Eugene Yokota for the [SBT Assembly Plugin](https://github.com/eed3si9n/sbt-assembly).
