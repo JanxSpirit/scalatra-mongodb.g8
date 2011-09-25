@@ -34,6 +34,13 @@ The template allows you to configure where your MongoDB server is running, the n
 At the SBT prompt you can run 'assembly' to generate an executable jar in the /target directory, It bundles Jetty and Scala and takes an optional argument for port (default is 8080).
 > java -jar /target/myproject-assembly.jar
 
+## Standalone Shell Script
+
+In the root of the project, run something like
+> cat src/main/resources/execute_jar.sh target/scalatra-mongodb-project-assembly-1.0.jar > target/scalatra_mongo
+
+That will make a handy standalone shell command called target/scalatra_mongo that wraps the executable jar created above. chmod +x that script and you can run your app with no 'java -jar ...'
+
 ## Thanks
 
 Thanks to [Nathan Hamblen](https://github.com/n8han) for [giter8](https://github.com/n8han/giter8), [Brendan McAdams](https://github.com/bwmcadams) for the [Casbah](https://github.com/mongodb/casbah) MongoDB Driver, [Ross Baker](https://github.com/rossabaker) for [Scalatra](https://github.com/scalatra/scalatra)
