@@ -37,6 +37,7 @@ At the SBT prompt you can run 'assembly' to generate an executable jar in the /t
 ## Standalone Shell Script
 
 In the root of the project, run something like
+
 > cat src/main/resources/execute_jar.sh target/scalatra-mongodb-project-assembly-1.0.jar > target/scalatra_mongo
 
 That will make a handy standalone shell command called target/scalatra_mongo that wraps the executable jar created above. chmod +x that script and you can run your app with no 'java -jar ...'
