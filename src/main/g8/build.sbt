@@ -12,8 +12,8 @@ seq(assemblySettings: _*)
 
 libraryDependencies ++= Seq(
   "com.mongodb.casbah" % "casbah_2.8.1" % "2.1.5.0",
-  "org.scalatra" %% "scalatra" % "2.0.0",
-  "org.scalatra" %% "scalatra-specs" % "2.0.0" % "test",
+  "org.scalatra" %% "scalatra" % "2.0.1",
+  "org.scalatra" %% "scalatra-specs" % "2.0.1" % "test",
   "org.mortbay.jetty" % "jetty" % "6.1.22" % "compile, jetty",
   "org.mortbay.jetty" % "jetty-servlet-tester" % "6.1.22" % "provided-> default",
   "javax.servlet" % "servlet-api" % "2.5" % "provided->default"
