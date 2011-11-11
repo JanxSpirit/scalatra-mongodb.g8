@@ -1,5 +1,5 @@
-import org.mortbay.jetty.Server
-import org.mortbay.jetty.servlet.{Context, ServletHolder}
+import org.eclipse.jetty.server.Server
+import org.eclipse.jetty.servlet.{ServletContextHandler, ServletHolder}
 
 object JettyLauncher {
    def main(args: Array[String]) {
@@ -10,8 +10,10 @@ object JettyLauncher {
      }
      println("Starting on port %s...".format(port))
      val server = new Server(port)
-     val root   = new Context(server, "/", Context.SESSIONS)
-     root.addServlet(new ServletHolder(new $servlet_name$), "/*")
+     val context = new ServletContextHandler(ServletContextHandler.SESSIONS)
+     context.setContextPath("/")
+     server.setHandler(context)     
+     context.addServlet(new ServletHolder(new MongoDBServlet), "/*")
      server.start()
      server.join()
    }

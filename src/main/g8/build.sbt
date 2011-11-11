@@ -1,3 +1,5 @@
+import AssemblyKeys._
+
 name := "$name$"
 
 version := "$version$"
@@ -12,16 +14,16 @@ seq(assemblySettings: _*)
 
 libraryDependencies ++= Seq(
   "com.mongodb.casbah" % "casbah_2.8.1" % "2.1.5.0",
-  "org.scalatra" %% "scalatra" % "2.0.1",
-  "org.scalatra" %% "scalatra-specs" % "2.0.1" % "test",
-  "org.mortbay.jetty" % "jetty" % "6.1.22" % "compile, jetty",
-  "org.mortbay.jetty" % "jetty-servlet-tester" % "6.1.22" % "provided-> default",
-  "javax.servlet" % "servlet-api" % "2.5" % "provided->default"
-)
+  "org.scalatra" %% "scalatra" % "2.0.0",
+  "org.scalatra" %% "scalatra-specs" % "2.0.0" % "test",
+  "org.mortbay.jetty" % "servlet-api" % "3.0.20100224" % "provided",
+  "org.eclipse.jetty" % "jetty-server" % "8.0.0.M3" % "container, compile",
+  "org.eclipse.jetty" % "jetty-util" % "8.0.0.M3" % "container, compile",
+  "org.eclipse.jetty" % "jetty-webapp" % "8.0.0.M3" % "container, compile"
+  )
 
 resolvers ++= Seq(
   "Sonatype OSS" at "http://oss.sonatype.org/content/repositories/releases/",
   "Sonatype OSS Snapshots" at "http://oss.sonatype.org/content/repositories/snapshots/",
   "Web plugin repo" at "http://siasia.github.com/maven2"
 )
-
