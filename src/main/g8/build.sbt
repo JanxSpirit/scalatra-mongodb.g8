@@ -10,6 +10,8 @@ mainClass := Some("JettyLauncher")
 
 seq(webSettings :_*)
 
+port in container.Configuration := 8080
+
 seq(assemblySettings: _*)
 
 libraryDependencies ++= Seq(
