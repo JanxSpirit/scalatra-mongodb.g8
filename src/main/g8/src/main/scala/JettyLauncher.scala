@@ -13,7 +13,7 @@ object JettyLauncher {
      val context = new ServletContextHandler(ServletContextHandler.SESSIONS)
      context.setContextPath("/")
      server.setHandler(context)     
-     context.addServlet(new ServletHolder(new MongoDBServlet), "/*")
+     context.addServlet(new ServletHolder(new $servlet_name$), "/*")
      server.start()
      server.join()
    }
