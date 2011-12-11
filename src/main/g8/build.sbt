@@ -15,7 +15,7 @@ port in container.Configuration := 8080
 seq(assemblySettings: _*)
 
 libraryDependencies ++= Seq(
-  "com.mongodb.casbah" % "casbah_2.8.1" % "2.1.5.0",
+  "com.mongodb.casbah" %% "casbah" % "2.1.5-1",
   "org.scalatra" %% "scalatra" % "2.0.0",
   "org.scalatra" %% "scalatra-specs" % "2.0.0" % "test",
   "org.mortbay.jetty" % "servlet-api" % "3.0.20100224" % "provided",
