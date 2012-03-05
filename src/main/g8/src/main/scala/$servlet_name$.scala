@@ -1,5 +1,8 @@
+import akka.dispatch._
+import org.scalatra.akka.Akka2Support
 import org.scalatra._
 import com.mongodb.casbah.Imports._
+import java.util.concurrent.Executors
 
 class $servlet_name$ extends ScalatraServlet {
 
