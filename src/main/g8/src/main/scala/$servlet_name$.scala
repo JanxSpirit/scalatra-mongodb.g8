@@ -6,6 +6,9 @@ import java.util.concurrent.Executors
 
 class $servlet_name$ extends ScalatraServlet {
 
+  implicit val ec =
+    ExecutionContext.fromExecutorService(Executors.newCachedThreadPool())
+
   //setup Casbah connection
   val mongo = MongoConnection("$mongodb_host$",$mongodb_port$)("$mongodb_db$")("$mongodb_collection$")
 
