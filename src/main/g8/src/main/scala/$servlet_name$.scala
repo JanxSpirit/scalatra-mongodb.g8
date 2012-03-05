@@ -4,7 +4,7 @@ import org.scalatra._
 import com.mongodb.casbah.Imports._
 import java.util.concurrent.Executors
 
-class $servlet_name$ extends ScalatraServlet {
+class $servlet_name$ extends ScalatraServlet with AkkaSupport {
 
   implicit val ec =
     ExecutionContext.fromExecutorService(Executors.newCachedThreadPool())
