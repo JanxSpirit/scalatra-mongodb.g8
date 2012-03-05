@@ -10,6 +10,13 @@ class $servlet_name$ extends ScalatraServlet {
     <h1>Test resource</h1>
   }
   
+  get("/theFuture") {
+    Future {
+      Thread.sleep(1000)
+      <h1>Welcome to the future</h1>
+   }
+ }
+
   post("/msgs") {
     val builder = MongoDBObject.newBuilder
     params.get("body").foreach(msg => {
@@ -29,6 +36,10 @@ class $servlet_name$ extends ScalatraServlet {
         <input type="submit"/>
       </form>
     </body>  
+  }  
+
+  override def destroy = {
+    ec.shutdown
   }
 
 }
