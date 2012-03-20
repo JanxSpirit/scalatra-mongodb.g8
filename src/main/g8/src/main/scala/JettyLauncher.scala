@@ -1,5 +1,8 @@
-import org.eclipse.jetty.server.Server
-import org.eclipse.jetty.servlet.{ServletContextHandler, ServletHolder}
+import org.eclipse.jetty.server.nio.SelectChannelConnector
+import org.eclipse.jetty.server.{ Server }
+import org.eclipse.jetty.server.handler.ContextHandlerCollection
+import org.eclipse.jetty.webapp.WebAppContext
+import org.eclipse.jetty.servlet.{ DefaultServlet, ServletContextHandler, ServletHolder }
 
 object JettyLauncher {
    def main(args: Array[String]) {
@@ -9,12 +12,27 @@ object JettyLauncher {
        case _ => 8080
      }
      println("Starting on port %s...".format(port))
-     val server = new Server(port)
-     val context = new ServletContextHandler(ServletContextHandler.SESSIONS)
-     context.setContextPath("/")
-     server.setHandler(context)     
-     context.addServlet(new ServletHolder(new $servlet_name$), "/*")
-     server.start()
-     server.join()
+
+     val server: Server = new Server
+
+     server setGracefulShutdown 5000
+     server setSendServerVersion false
+     server setSendDateHeader true
+     server setStopAtShutdown true
+
+     val connector = new SelectChannelConnector
+     connector setPort port
+     connector setMaxIdleTime 90000
+     server addConnector connector
+
+    val webapp = "src/main/webapp"
+    val webApp = new WebAppContext
+    webApp setContextPath "/"
+    webApp setResourceBase webapp
+    webApp setDescriptor (webapp+"/WEB-INF/web.xml");
+
+    server setHandler webApp
+
+    server.start()
    }
 }
