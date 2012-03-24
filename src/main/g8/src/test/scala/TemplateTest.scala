@@ -9,7 +9,7 @@ object TemplateTest extends ScalatraSpec { def is =
     "return status 404"                    !getDoesntExistResource^
 				   end
 
-  addServlet(classOf[MongoDBServlet], "/*")
+  addServlet(classOf[$servlet_name$], "/*")
 
   def getTestResource = get("/test") {
     status must_== 200
